@@ -10,29 +10,29 @@ void findHighestAndLowest(double[], int, double&, int&, double&, int&);
 void countAboveAndBelowAverage(double[], int, double, int&, int&);
 
 int main() {
-    string expenses[100];
-    double amount[100];
-    int n;
+    int size;
 
     cout << "\n===== EXPENSE ANALYZER =====\n";
     cout << "\nEnter number of expenses: ";
-    cin >> n;
+    cin >> size;
 
-    if (n <= 0 || n > 100) {
+    if (size <= 0) {
         cout << "Invalid number of expenses!";
         return 0;
     }
+    string *expenses = new string[size];
+    double *amount = new double[size];
 
-    getExpenses(expenses, amount, n);
+    getExpenses(expenses, amount, size);
 
     cout << "\n===== EXPENSE REPORT =====\n\n";
 
-    displayExpenses(expenses, amount, n);
+    displayExpenses(expenses, amount, size);
 
     cout << "\n----------------------------\n";
 
-    double totalExpenses = calculateTotal(amount, n);
-    double averageExpense = totalExpenses / n;
+    double totalExpenses = calculateTotal(amount, size);
+    double averageExpense = totalExpenses / size;
 
     cout << "\nTotal expenses: " << totalExpenses << " TL";
     cout << "\nAverage expense: " << averageExpense << " TL";
@@ -43,7 +43,7 @@ int main() {
     int lowestIndex;
 
     findHighestAndLowest(
-        amount, n,
+        amount, size,
         highestExpense, highestIndex,
         lowestExpense, lowestIndex
     );
@@ -58,12 +58,14 @@ int main() {
     int belowAverage = 0;
 
     countAboveAndBelowAverage(
-        amount, n, averageExpense, aboveAverage, belowAverage
+        amount, size, averageExpense, aboveAverage, belowAverage
     );
 
     cout << "\n\nExpenses above average: " << aboveAverage;
     cout << "\nExpenses below average: " << belowAverage;
 
+    delete[] expenses;
+    delete[] amount;
     return 0;
 }
 

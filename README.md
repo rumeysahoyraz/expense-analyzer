@@ -1,39 +1,56 @@
-Expense Analyzer
+# Expense Analyzer
 
-A beginner-level C++ project that collects and analyzes personal expenses.
+A C++ console application that collects and analyzes personal expenses.
 
-Features
+## Features
 
-Collect expense names and amounts from the user.
+- Collect expense names and amounts from the user.
+- Dynamically allocate memory based on the number of expenses.
+- Display all recorded expenses.
+- Calculate total expenses.
+- Calculate average expenses.
+- Find the highest and lowest expenses.
+- Count expenses above and below the average.
 
-Display all recorded expenses.
+## Technologies
 
-Calculate total expenses.
+- C++
+- Standard Library (`iostream`, `string`)
 
-Calculate average expenses.
+## Concepts Practiced
 
-Find the highest and lowest expenses.
+- Arrays
+- Pointers
+- Dynamic Memory Allocation (`new` and `delete[]`)
+- Functions
+- Pass by Reference
+- Loops and Conditional Statements
+- Data Type Conversion
 
-Count expenses above and below the average.
+## Memory Management
 
-Technologies
+The program uses dynamic arrays to allocate memory according to the number of expenses entered by the user.
 
-C++
+Allocated memory is released using `delete[]` after the analysis is completed.
 
-Standard Library (iostream, string)
+## How to Run
 
-Concepts Practiced
+Compile the source file:
 
-Arrays
+```bash
+g++ main.cpp -o expense_analyzer
+```
 
-Strings
+Run the program:
 
-For loops
+```bash
+./expense_analyzer
+```
 
-Conditional statements
+## Future Improvements
 
-Functions
-
-Pass by reference
-
-Data type conversion
+- Add expense categories.
+- Search expenses by name.
+- Sort expenses by amount.
+- Save expense records to a file.
+- Add a menu-based interface.
